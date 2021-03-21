@@ -1,4 +1,12 @@
+#####################################
+# Daniel Eberhart
+# 3/21/2021
 # soundbites.py
+#
+# This file contains the code that will have the bot
+# join the discord voice channel and play the 
+# selected soundbite.
+#####################################
 
 import discord
 from discord.ext import commands
@@ -20,7 +28,17 @@ class Soundbites(commands.Cog):
     async def on_ready(self):
         print("Loaded Soundbites Cog")
 
-    # This function will cause the bot to join the voice channel and play the selected soundbite
+
+    #####################################
+    # Function: mp3
+    #
+    # Purpose: Play a soundbite to the discord voice chat
+    #
+    # Input: Invoked by '== {soundbite}'
+    #
+    # Output: The bot will join the voice channel, play
+    #   the selected soundbite, and then leave.
+    #####################################
     @commands.command(aliases=['='])
     async def mp3(self, ctx, *, src: str):
         try:
