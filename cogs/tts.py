@@ -1,4 +1,12 @@
+#####################################
+# Daniel Eberhart
+# 3/21/2021
 # tts.py
+#
+# This file contains the code that will have the bot
+# join the discord voice channel and play the
+# text-to-speech.
+#####################################
 
 from gtts import gTTS
 import asyncio
@@ -21,8 +29,17 @@ class TextToSpeech(commands.Cog):
     async def on_ready(self):
         print("Loaded TTS Cog")
 
-    # This command will cause the bot to join the voice channel and use text to speech to play
-    # the message that was sent.
+
+    #####################################
+    # Function: tts
+    #
+    # Purpose: Play message over text-to-speech
+    #
+    # Input: Invoked by '=tts {message}'
+    #
+    # Output: The bot will join the voice channel, play
+    #   the text-to-speech, and then leave.
+    #####################################
     @commands.command()
     async def tts(self, ctx, *, message: str):
         try:
