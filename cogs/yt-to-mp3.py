@@ -1,4 +1,12 @@
+#####################################
+# Daniel Eberhart
+# 3/21/2021
 # yt-to-mp3.py
+#
+# This file contains the code that will have the bot
+# join the discord voice channel and play the 
+# selected soundbite.
+#####################################
 
 import discord
 from discord.ext import commands
@@ -22,6 +30,18 @@ class YoutubeToMp3(commands.Cog):
     async def on_ready(self):
         print("Loaded YouTube to Mp3 Cog")
 
+    #####################################
+    # Function: ytmp3
+    #
+    # Purpose: Play the audio from a youtube video
+    #   to the discord voice chat
+    #
+    # Input: Invoked by '=ytmp3 {youtube link}'
+    #
+    # Output: The bot will download the youtube audio,
+    #   join the voice channel, play the audio,
+    #   and then leave.
+    #####################################
     @commands.command()
     async def ytmp3(self, ctx, url: str):
         ydl_opts = {
